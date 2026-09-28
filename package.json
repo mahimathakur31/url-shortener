@@ -1,0 +1,20 @@
+{
+  "name": "url-shortner",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @url-shortner/api\" \"npm run dev --workspace @url-shortner/web\"",
+    "build": "npm run build --workspace @url-shortner/api && npm run build --workspace @url-shortner/web",
+    "lint": "npm run lint --workspace @url-shortner/web"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.23.1",
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "@nestjs/config": "^12.0.0",
+    "pg": "^8.23.0"
+  }
+}

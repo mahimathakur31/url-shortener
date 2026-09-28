@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --ink: #18211d;
+  --paper: #f2f0e9;
+  --lime: #d9f36a;
+  --muted: #65716a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Space Grotesk", sans-serif;
+}
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 6vw 8vw 28px;
+  background:
+    radial-gradient(circle at 85% 15%, #d7e5c5 0, transparent 28%), var(--paper);
+}
+.hero {
+  max-width: 930px;
+  margin: auto;
+  width: 100%;
+}
+.eyebrow {
+  font:
+    500 12px "DM Mono",
+    monospace;
+  letter-spacing: 0;
+  margin: 0 0 38px;
+}
+h1 {
+  max-width: 750px;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+  margin: 0 0 28px;
+}
+.lede {
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 510px;
+  margin: 0 0 54px;
+}
+.shorten-form {
+  max-width: 780px;
+}
+label {
+  display: block;
+  font:
+    500 12px "DM Mono",
+    monospace;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #bdc5ba;
+  background: #faf9f4;
+  padding: 18px 20px;
+  font:
+    16px "DM Mono",
+    monospace;
+  color: var(--ink);
+  outline: none;
+}
+input:focus {
+  border-color: var(--ink);
+}
+button {
+  border: 1px solid var(--ink);
+  background: var(--lime);
+  color: var(--ink);
+  padding: 0 24px;
+  font:
+    600 15px "Space Grotesk",
+    sans-serif;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.result {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border-left: 4px solid var(--lime);
+  background: #e7eadf;
+  display: grid;
+  gap: 7px;
+}
+.result span {
+  font:
+    12px "DM Mono",
+    monospace;
+  text-transform: uppercase;
+}
+.result a {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.error {
+  color: #a13424;
+  margin-top: 18px;
+}
+footer {
+  color: var(--muted);
+  font:
+    12px "DM Mono",
+    monospace;
+  margin-top: auto;
+  padding-top: 80px;
+}
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 30px 22px 22px;
+  }
+  .eyebrow {
+    margin-bottom: 70px;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  .lede {
+    font-size: 17px;
+    margin-bottom: 38px;
+  }
+  .input-row {
+    display: grid;
+  }
+  input,
+  button {
+    min-height: 56px;
+  }
+  button {
+    padding: 0 20px;
+  }
+}
