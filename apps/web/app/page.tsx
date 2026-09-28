@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
 
 export default function Home() {
   const [url, setUrl] = useState("");
@@ -20,7 +20,7 @@ export default function Home() {
       const response = await fetch(`${apiUrl}/urls`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ longUrl: url, user_id: 11 }),
       });
 
       if (!response.ok) throw new Error("Enter a valid URL and try again.");
