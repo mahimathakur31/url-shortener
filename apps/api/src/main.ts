@@ -7,9 +7,12 @@ async function bootstrap() {
 
   app.setGlobalPrefix("api");
   app.enableCors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-    credentials: true,
+    origin: [
+      "http://localhost:3001",
+      "https://url-shortener-web-virid.vercel.app",
+    ],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
