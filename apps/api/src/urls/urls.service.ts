@@ -33,7 +33,7 @@ export class UrlsService {
         body.expired_at,
       ]);
       console.log("result: ", result);
-      return `${process.env.HOST}/api/urls/${short_url}`;
+      return { code: `${process.env.HOST}/api/urls/${short_url}` };
     } catch (error) {
       console.log("error: ", error);
     }

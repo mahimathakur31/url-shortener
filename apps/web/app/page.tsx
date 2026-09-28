@@ -4,6 +4,8 @@ import { FormEvent, useState } from "react";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000/api";
 
+// https://url-shortener-api-jade.vercel.app/api
+
 export default function Home() {
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -25,7 +27,7 @@ export default function Home() {
 
       if (!response.ok) throw new Error("Enter a valid URL and try again.");
       const result: { code: string } = await response.json();
-      setShortUrl(`${apiUrl.replace(/\/api$/, "")}/api/urls/${result.code}`);
+      setShortUrl(result.code);
     } catch (requestError) {
       setError(
         requestError instanceof Error
