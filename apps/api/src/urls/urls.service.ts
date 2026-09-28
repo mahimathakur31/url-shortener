@@ -1,6 +1,6 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { Pool } from "pg";
-import { DATABASE_POOL } from "src/database/database.module";
+import { DATABASE_POOL } from "../database/database.module";
 import { CreateUrlDto } from "./dto/create-url.dto";
 
 @Injectable()
