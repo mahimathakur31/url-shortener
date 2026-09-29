@@ -14,6 +14,13 @@ export class UrlsController {
   @Get(":code")
   async getLongUrl(@Param("code") short_url: string, @Res() res: any) {
     const redirectUrl = await this.urlService.getLongUrl(short_url);
+
+    if (redirectUrl === "time is expired") {
+      return res.status(410).json({
+        message: "Short URL has expired",
+      });
+    }
+
     return res.redirect(redirectUrl);
   }
 }

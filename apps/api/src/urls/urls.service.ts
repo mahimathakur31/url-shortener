@@ -45,10 +45,8 @@ export class UrlsService {
 
       const res = await this.db.query(query, [short_url]);
       const expireDate = res.rows[0]?.expired_at;
-      console.log("expireDate: ", expireDate);
       const currDate = new Date().getTime();
-      console.log("currDate: ", currDate);
-      if (currDate > expireDate) {
+      if (expireDate && currDate > expireDate) {
         return "time is expired";
       } else {
         return res.rows[0]?.long_url;
