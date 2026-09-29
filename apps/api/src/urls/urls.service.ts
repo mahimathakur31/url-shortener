@@ -44,7 +44,7 @@ export class UrlsService {
       const query = `SELECT long_url, expired_at FROM urlshortner WHERE short_url= $1`;
 
       const res = await this.db.query(query, [short_url]);
-      const expireDate = res.rows[0].expired_at;
+      const expireDate = res.rows[0]?.expired_at;
       console.log("expireDate: ", expireDate);
       const currDate = new Date().getTime();
       console.log("currDate: ", currDate);

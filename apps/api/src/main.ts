@@ -10,6 +10,7 @@ async function bootstrap() {
     origin: [
       "http://localhost:3001",
       "https://url-shortener-web-virid.vercel.app",
+      "https://url-shortener-8yzd8gov8-mahima-kumaris-projects.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
